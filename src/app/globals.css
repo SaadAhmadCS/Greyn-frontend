@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* ===== GREYN Brand Kit — Helvetica Now Bold (Headings) ===== */
+@font-face {
+  font-family: "Helvetica Now Bold";
+  src: url("/fonts/helveticanowtext-bold-demo.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Bold";
+  src: url("/fonts/helveticanowtext-bolditalic-demo.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Bold";
+  src: url("/fonts/helveticanowtext-black-demo.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Bold";
+  src: url("/fonts/helveticanowtext-blackitalic-demo.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ===== GREYN Brand Kit — CSS Custom Properties ===== */
+:root {
+  --background: #f5f5ef; /* Cream White */
+  --foreground: #2e2e2e; /* Dark Grey */
+
+  /* Brand Primary */
+  --greyn-deep-forest: #0b3d2e;
+  --greyn-vibrant-leaf: #2e7d47;
+  --greyn-soft-green: #9dc087;
+  --greyn-cream-white: #f5f5ef;
+
+  /* Brand Secondary */
+  --greyn-earth-brown: #8b6f4b;
+  --greyn-dark-grey: #2e2e2e;
+  --greyn-sand-beige: #d9c9a3;
+
+  /* Font families */
+  --font-heading:
+    "Helvetica Now Bold", "Arial Black", "Helvetica Neue", sans-serif;
+  --font-body: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Tailwind v4 @theme — Remap color tokens to brand palette ===== */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Font aliases for Tailwind */
+  --font-sans: var(--font-body);
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* ---- Green palette → Brand Greens ---- */
+  --color-green-50: #e8f5ec;
+  --color-green-100: #c8e6c9;
+  --color-green-200: #a5d6a7;
+  --color-green-300: #9dc087; /* Soft Green */
+  --color-green-400: #66bb6a;
+  --color-green-500: #2e7d47; /* Vibrant Leaf Green */
+  --color-green-600: #2e7d47; /* Vibrant Leaf Green */
+  --color-green-700: #1b6b35;
+  --color-green-800: #0b3d2e; /* Deep Forest Green */
+  --color-green-900: #0b3d2e; /* Deep Forest Green */
+  --color-green-950: #072a1e;
+
+  /* ---- Emerald palette → Brand Greens ---- */
+  --color-emerald-50: #e8f5ec;
+  --color-emerald-100: #c8e6c9;
+  --color-emerald-200: #a5d6a7;
+  --color-emerald-300: #9dc087;
+  --color-emerald-400: #66bb6a;
+  --color-emerald-500: #2e7d47;
+  --color-emerald-600: #2e7d47;
+  --color-emerald-700: #1b6b35;
+  --color-emerald-800: #0b3d2e;
+  --color-emerald-900: #0b3d2e;
+
+  /* ---- Teal palette → Brand accents ---- */
+  --color-teal-50: #f5f5ef; /* Cream White */
+  --color-teal-100: #d9c9a3; /* Sand Beige */
+  --color-teal-200: #c8e6c9;
+  --color-teal-300: #9dc087;
+  --color-teal-400: #66bb6a;
+  --color-teal-500: #2e7d47;
+  --color-teal-600: #2e7d47;
+  --color-teal-700: #0b3d2e;
+  --color-teal-800: #0b3d2e;
+  --color-teal-900: #072a1e;
+
+  /* ---- Gray palette — warm neutrals with brand influence ---- */
+  --color-gray-50: #fafaf6;
+  --color-gray-100: #f5f5ef; /* Cream White */
+  --color-gray-200: #e8e5dd;
+  --color-gray-300: #d9c9a3; /* Sand Beige */
+  --color-gray-400: #a8a08e;
+  --color-gray-500: #8b6f4b; /* Earth Brown */
+  --color-gray-600: #6b5a3e;
+  --color-gray-700: #4a4035;
+  --color-gray-800: #3a332b;
+  --color-gray-900: #2e2e2e; /* Dark Grey */
+  --color-gray-950: #1a1a1a;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ===== Heading typography — brand font ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+/* Toast Animations */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-slide-out-right {
+  animation: slide-out-right 0.3s ease-out;
+}
