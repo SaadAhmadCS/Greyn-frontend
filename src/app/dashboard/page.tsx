@@ -97,23 +97,23 @@ const DashboardPage: React.FC = () => {
         ]);
 
         if (statsRes.success && statsRes.data) {
-          setStats(statsRes.data);
+          setStats(statsRes.data as DashboardStats);
         }
 
         if (investmentsRes.success && investmentsRes.data) {
-          setInvestments(investmentsRes.data);
+          setInvestments(investmentsRes.data as Investment[]);
         }
 
         if (monthlyRes.success && monthlyRes.data) {
-          setMonthlyData(monthlyRes.data);
+          setMonthlyData(monthlyRes.data as MonthlyData[]);
         }
 
         if (portfolioRes.success && portfolioRes.data) {
-          setPortfolioDistribution(portfolioRes.data);
+          setPortfolioDistribution(portfolioRes.data as PortfolioDistribution[]);
         }
 
         if (topProjectsRes.success && topProjectsRes.data) {
-          setTopProjects(topProjectsRes.data);
+          setTopProjects(topProjectsRes.data as Investment[]);
         }
       } catch (err: any) {
         console.error('Error fetching dashboard data:', err);
