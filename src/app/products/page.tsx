@@ -34,7 +34,7 @@ const ProductsPage: React.FC = () => {
         setLoading(true);
         const response = await api.public.products.get({ limit: 100 });
         if (response.success && response.data) {
-          setProducts(response.data);
+          setProducts(response.data as any);
         } else {
           setError(response.message || 'Failed to load products');
         }

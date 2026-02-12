@@ -8,6 +8,7 @@ import { api } from '../../utils/api';
 
 interface Project {
   _id: string;
+  id?: string;
   name: string;
   category: string;
   carbonImpact: string;
@@ -29,7 +30,7 @@ const ProjectsPage: React.FC = () => {
         setLoading(true);
         const response = await api.public.projects.get({ limit: 100 });
         if (response.success && response.data) {
-          setProjects(response.data);
+          setProjects(response.data as any);
         } else {
           setError(response.message || 'Failed to load projects');
         }

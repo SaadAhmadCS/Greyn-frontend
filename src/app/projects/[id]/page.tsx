@@ -19,6 +19,7 @@ interface ProjectDetails {
   minInvestment: number;
   duration: string;
   location: string;
+  carbonCreditsPerHundred: number;
 }
 
 const ProjectDetailPage: React.FC = () => {
@@ -85,6 +86,7 @@ const ProjectDetailPage: React.FC = () => {
   }
 
   const fundingPercentage = (project.currentFunding / project.fundingGoal) * 100;
+  const calculatedCarbonCredits = (parseFloat(investmentAmount || '0') / 100) * (project.carbonCreditsPerHundred || 0);
 
   const handleInvestClick = useCallback(() => {
     alert(`Investment of $${investmentAmount} initiated! Redirecting to wallet...`);

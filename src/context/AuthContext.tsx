@@ -111,7 +111,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
 
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token, user: userData } = response.data as any;
         
         // Store token and user data
         setAuthTokens(token);
@@ -141,7 +141,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   // Signup function
-  const signup = async (role: UserRole, data: any): Promise<{ success: boolean; message?: string }> => {
+  const signup = async (role: UserRole, data: any): Promise<{ success: boolean; message?: string; loggedIn?: boolean }> => {
     try {
       setIsLoading(true);
       
@@ -166,8 +166,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
       if (response.success && response.data) {
         // If token is provided (immediate login after signup)
-        if (response.data.token) {
-          const { token, user: userData } = response.data;
+        if ((response.data as any).token) {
+          const { token, user: userData } = response.data as any;
           setAuthTokens(token);
           setUserData(userData);
           

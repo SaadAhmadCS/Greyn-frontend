@@ -49,8 +49,8 @@ const NGODetailsPage: React.FC = () => {
     try {
       const response = await api.ngo.details.get();
       if (response.success && response.data) {
-        setDetails(response.data);
-        setEditData(response.data);
+        setDetails(response.data as any);
+        setEditData(response.data as any);
       } else {
         setError(response.message || 'Failed to load NGO details');
       }
@@ -67,9 +67,9 @@ const NGODetailsPage: React.FC = () => {
     setSaving(true);
     setError(null);
     try {
-      const response = await api.ngo.details.update(editData);
+      const response = await api.ngo.details.update(editData as any);
       if (response.success && response.data) {
-        setDetails(response.data);
+        setDetails(response.data as any);
         setIsEditing(false);
         setError(null);
       } else {

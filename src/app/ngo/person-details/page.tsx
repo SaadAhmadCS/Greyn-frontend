@@ -56,8 +56,8 @@ const PersonDetailsPage: React.FC = () => {
     try {
       const response = await api.ngo.personDetails.get();
       if (response.success && response.data) {
-        setDetails(response.data);
-        setEditData(response.data);
+        setDetails(response.data as any);
+        setEditData(response.data as any);
       } else {
         setError(response.message || 'Failed to load person details');
       }
@@ -76,7 +76,7 @@ const PersonDetailsPage: React.FC = () => {
     try {
       const response = await api.ngo.personDetails.update(editData);
       if (response.success && response.data) {
-        setDetails(response.data);
+        setDetails(response.data as any);
         setIsEditing(false);
         setError(null);
       } else {

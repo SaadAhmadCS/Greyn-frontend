@@ -96,11 +96,12 @@ const ProfilePageContent: React.FC = () => {
         try {
           const statsResponse = await api.dashboard.getStats();
           if (statsResponse.success && statsResponse.data) {
+            const data = statsResponse.data as any;
             setStats({
-              totalInvestments: statsResponse.data.totalInvestments || 0,
-              totalInvested: statsResponse.data.totalInvested || 0,
-              carbonCredits: statsResponse.data.carbonCredits || statsResponse.data.totalCarbonCredits || 0,
-              projectsSupported: statsResponse.data.projectsSupported || statsResponse.data.activeProjects || 0
+              totalInvestments: data.totalInvestments || 0,
+              totalInvested: data.totalInvested || 0,
+              carbonCredits: data.carbonCredits || data.totalCarbonCredits || 0,
+              projectsSupported: data.projectsSupported || data.activeProjects || 0
             });
           }
         } catch (err) {

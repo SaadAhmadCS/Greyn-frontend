@@ -60,7 +60,7 @@ const NgoWalletPage: React.FC = () => {
     try {
       const response = await api.ngo.wallet.get();
       if (response.success && response.data) {
-        setWalletData(response.data);
+        setWalletData(response.data as any);
       } else {
         setError(response.message || 'Failed to load wallet data');
       }

@@ -53,7 +53,7 @@ const ProjectEditPage: React.FC = () => {
     try {
       const response = await api.ngo.projects.getOne(projectId);
       if (response.success && response.data) {
-        const p = response.data;
+        const p = response.data as any;
         setFormData({
           projectName: p.name || '',
           category: p.category || '',

@@ -70,7 +70,7 @@ const NGODashboardPage: React.FC = () => {
     try {
       const response = await api.ngo.dashboard.get({ timeframe: selectedTimeframe });
       if (response.success && response.data) {
-        setDashboardData(response.data);
+        setDashboardData(response.data as DashboardData);
       } else {
         setError(response.message || 'Failed to load dashboard data');
       }

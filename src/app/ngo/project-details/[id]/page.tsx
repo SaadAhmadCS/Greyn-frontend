@@ -69,7 +69,7 @@ const NGOProjectDetailsPage: React.FC = () => {
     try {
       const response = await api.ngo.projects.getOne(projectId);
       if (response.success && response.data) {
-        setProject(response.data);
+        setProject(response.data as Project);
       } else {
         setError(response.message || 'Failed to load project');
       }

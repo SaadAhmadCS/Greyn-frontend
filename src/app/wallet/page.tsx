@@ -56,7 +56,8 @@ const WalletPageContent: React.FC = () => {
           return;
         }
 
-        const wallet = res.data.wallet || {};
+        const data = res.data as any;
+        const wallet = data.wallet || {};
         setWalletBalance(wallet.balance || 0);
         setAvailableBalance(wallet.availableBalance || 0);
         // Pending investments are calculated as balance - availableBalance - pendingWithdrawals
@@ -68,8 +69,8 @@ const WalletPageContent: React.FC = () => {
         );
         setPendingInvestments(pending);
 
-        setWithdrawalRequests(res.data.withdrawalRequests || []);
-        setTransactions(res.data.transactions || []);
+        setWithdrawalRequests(data.withdrawalRequests || []);
+        setTransactions(data.transactions || []);
       } catch (err: any) {
         console.error('Error loading wallet:', err);
         setError(err.message || 'Failed to load wallet');
@@ -93,20 +94,21 @@ const WalletPageContent: React.FC = () => {
         }
 
         // Update local state with new wallet data
-        if (res.data?.wallet) {
-          setWalletBalance(res.data.wallet.balance || 0);
-          setAvailableBalance(res.data.wallet.availableBalance || 0);
+        const data = res.data as any;
+        if (data?.wallet) {
+          setWalletBalance(data.wallet.balance || 0);
+          setAvailableBalance(data.wallet.availableBalance || 0);
         }
 
         // Add new transaction to the list
-        if (res.data?.transaction) {
+        if (data?.transaction) {
           const newTransaction: Transaction = {
-            id: res.data.transaction.id,
-            type: res.data.transaction.type,
-            amount: res.data.transaction.amount,
-            description: res.data.transaction.description,
-            date: new Date(res.data.transaction.date).toISOString().split('T')[0],
-            status: res.data.transaction.status,
+            id: data.transaction.id,
+            type: data.transaction.type,
+            amount: data.transaction.amount,
+            description: data.transaction.description,
+            date: new Date(data.transaction.date).toISOString().split('T')[0],
+            status: data.transaction.status,
           };
           setTransactions((prev) => [newTransaction, ...prev]);
         }
@@ -135,14 +137,15 @@ const WalletPageContent: React.FC = () => {
           return;
         }
 
+        const data = res.data as any;
         const newRequest: WithdrawalRequest = {
-          id: res.data.id,
-          amount: res.data.amount,
-          requestedAt: res.data.requestedAt,
-          status: res.data.status,
-          approvedAt: res.data.approvedAt,
-          availableAt: res.data.availableAt,
-          rejectedReason: res.data.rejectedReason,
+          id: data.id,
+          amount: data.amount,
+          requestedAt: data.requestedAt,
+          status: data.status,
+          approvedAt: data.approvedAt,
+          availableAt: data.availableAt,
+          rejectedReason: data.rejectedReason,
         };
 
         setWithdrawalRequests((prev) => [newRequest, ...prev]);

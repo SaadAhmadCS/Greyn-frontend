@@ -5,7 +5,7 @@
  * Displays carbon credit report after successful payment
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { api } from '@/utils/api';
 
@@ -22,7 +22,7 @@ interface PaymentData {
   createdAt: string;
 }
 
-const PaymentSuccessPage = () => {
+const PaymentSuccessContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const paymentIntentId = searchParams.get('id');
@@ -227,6 +227,21 @@ const PaymentSuccessPage = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+const PaymentSuccessPage = () => {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-green-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 text-lg">Loading...</p>
+        </div>
+      </div>
+    }>
+      <PaymentSuccessContent />
+    </Suspense>
   );
 };
 

@@ -58,10 +58,10 @@ const NGOProjectDetailsListPage: React.FC = () => {
         search: searchTerm || undefined,
         page: 1,
         limit: 100
-      });
+      } as any);
 
       if (response.success && response.data) {
-        setProjects(response.data.projects || []);
+        setProjects((response.data as any).projects || []);
       } else {
         setError(response.message || 'Failed to load projects');
       }
