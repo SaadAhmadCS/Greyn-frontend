@@ -61,7 +61,7 @@ export default function NgoTopbar() {
             </div>
             <div>
               <h1 className="text-base sm:text-lg font-bold bg-gradient-to-r from-green-700 via-emerald-600 to-green-700 bg-clip-text text-transparent group-hover:from-green-600 group-hover:via-emerald-500 group-hover:to-green-600 transition-all duration-300">
-                {user?.ngoName || user?.name || 'NGO Portal'}
+                {(user as any)?.ngoName || user?.name || 'NGO Portal'}
               </h1>
               <p className="text-xs text-gray-500 group-hover:text-green-600 transition-colors duration-300">Non-Governmental Organization Portal</p>
             </div>
