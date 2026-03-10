@@ -12,9 +12,9 @@ import {
 
 const RewardingCycle = () => {
      const rewardCategories = [
-          { name: 'Recycled Tech', icon: Smartphone, color: 'emerald' },
-          { name: 'Organic Apparel', icon: Shirt, color: 'green' },
-          { name: 'Solar Gears', icon: Sun, color: 'lime' },
+          { name: 'CO₂ Credits', icon: Smartphone, color: 'emerald' },
+          { name: 'Eco Products', icon: Shirt, color: 'green' },
+          { name: 'Green Energy', icon: Sun, color: 'lime' },
           { name: 'Eco-Home', icon: Home, color: 'teal' }
      ];
 
@@ -39,9 +39,9 @@ const RewardingCycle = () => {
                          </h2>
 
                          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium">
-                              Greyn points aren't just numbers. They are the keys to a greener lifestyle.
-                              Redeem your impact points for eco-friendly products crafted from recycled
-                              materials, <span className="text-green-700 font-bold">closing the loop</span> on global waste.
+                              Greyn transforms everyday climate actions into verified impact.
+                              Earn CO₂ credits, redeem eco-rewards made from recycled
+                              materials, and <span className="text-green-700 font-bold">close the loop</span> on global sustainability.
                          </p>
                     </div>
 
@@ -77,7 +77,7 @@ const RewardingCycle = () => {
                          {/* Connective Tissue/Ecosystem Visuals */}
                          <div className="mt-16 text-center">
                               <button className="group inline-flex items-center space-x-3 px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-green-600 transition-all duration-300 shadow-xl shadow-slate-200">
-                                   <span>Enter the Rewards Marketplace</span>
+                                   <span>Enter the Eco-Rewards Store</span>
                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                               </button>
                          </div>

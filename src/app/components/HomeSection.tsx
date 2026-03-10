@@ -156,7 +156,7 @@ const ImpactSection = React.memo(() => {
         {/* Full-Page Background Image with "Framed" Aesthetic */}
         <div className="absolute w-full inset-1 overflow-hidden ">
           <img
-            src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2074&auto=format&fit=crop"
+            src="/hero-bg.jpg"
             alt="Lush green garden"
             className="h-full w-full object-cover"
           />
@@ -171,20 +171,20 @@ const ImpactSection = React.memo(() => {
             {/* Main Hero Content Card */}
             <div className="md:rounded-4xl bg-emerald-950/20 p-16 md:p-8 backdrop-blur-xs lg:py-16 shadow-xl">
               <span className="inline-block px-4 py-1.5 mb-8 text-xs font-bold tracking-widest text-[#9FEF5C] uppercase bg-white/5 border border-white/10">
-                Go Green Initiative
+                Unified Climate-Tech OS
               </span>
 
               <h1 className="mb-8 text-5xl font-extrabold leading-[1.05] text-white md:text-7xl">
-                Growing Your Garden For Future with <span className="text-[#9FEF5C]">Greyn</span>
+                Unified Climate-Tech Operating System for Verified Global <span className="text-[#9FEF5C]">Impact</span>
               </h1>
 
               <p className="mb-10 max-w-xl text-lg text-white/80 leading-relaxed md:text-xl">
-                Let GardenGlory be your guide to building and maintaining a beautiful, healthy garden through sustainable solutions and handpicked organic essentials.
+                Greyn connects NGOs, Corporations, Communities, and Carbon Markets into one integrated ecosystem — enabling transparent, measurable, and scalable climate action worldwide.
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <button className="group flex items-center gap-3 rounded-3xl bg-[#6BAE32] px-6 py-4 font-bold text-white transition-all hover:bg-[#5a9429] hover:scale-105 hover:shadow-[0_0_40px_rgba(107,174,50,0.5)]">
-                  Join The Movement
+                  Explore the Ecosystem
                   <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#6BAE32] transition-transform group-hover:translate-x-1">
                     <ArrowRight size={14} />
                   </div>
@@ -199,15 +199,15 @@ const ImpactSection = React.memo(() => {
                     ))}
                   </div>
                   <div className="ml-2">
-                    <p className="text-sm font-bold">5k+ Trusted Clients</p>
-                    <p className="text-[10px] text-white/50 uppercase tracking-tighter">Verified Organic</p>
+                    <p className="text-sm font-bold">Global Climate Partners</p>
+                    <p className="text-[10px] text-white/50 uppercase tracking-tighter">Verified Impact</p>
                   </div>
                 </div>
               </div>
 
               {/* Minimalist Feature Badges */}
               <div className="mt-14 flex flex-wrap gap-3">
-                {['Organic Seed', 'Soil Testing', 'Eco Friendly', 'Expert Advice'].map(tag => (
+                {['Verified MRV', 'ESG Reporting', 'Carbon Credits', 'Climate Action'].map(tag => (
                   <span key={tag} className="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 border border-white/10 text-xs font-bold text-white uppercase tracking-wider transition-colors hover:bg-white/10">
                     <CheckCircle2 size={14} className="text-[#9FEF5C]" /> {tag}
                   </span>
@@ -218,11 +218,7 @@ const ImpactSection = React.memo(() => {
           </div>
         </div>
 
-        {/* Floating Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3">
-          <div className="h-12 w-[1px] bg-gradient-to-b from-white/40 to-transparent"></div>
-          <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] [writing-mode:vertical-lr]">Scroll</p>
-        </div>
+
       </section>
 </>
 

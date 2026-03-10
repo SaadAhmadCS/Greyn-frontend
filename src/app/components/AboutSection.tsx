@@ -64,13 +64,13 @@ const missionVision = [
     id: 0,
     title: "Our Mission",
     icon: <Target size={20} />,
-    desc: "Our mission is to make sustainable investing accessible to everyone by connecting individuals with verified, high-impact environmental projects. We aim to empower people to create meaningful change through small, transparent, and measurable micro-investments."
+    desc: "To build the digital infrastructure that powers verified climate action globally. Greyn unifies the entire climate value chain into one connected platform — from NGO project execution to corporate ESG reporting and carbon credit issuance."
   },
   {
     id: 1,
     title: "Our Vision",
     icon: <Eye size={20} />,
-    desc: "To build a world where sustainability is a natural part of everyday life—accessible, rewarding, and driven by community participation. We imagine a circular green economy where investments generate environmental impact, financial value, and digital rewards."
+    desc: "To become the global backbone of climate transparency — where every carbon credit is traceable, every ESG report reflects real impact, and sustainability becomes measurable at scale."
   }
 ];
 
@@ -87,24 +87,23 @@ export default function App() {
           <div className=" w-full md:w-3/4 lg:w-1/2">
             <div className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#6BAE32]">
               <span className="h-[2px] w-8 bg-[#6BAE32]"></span>
-              The Greyn Story
+              The Greyn Ecosystem
             </div>
             <h2 className="text-3xl font-bold text-[#2D4A22] lg:text-4xl">
-              Redefining Sustainability Through  <span className="text-[#6BAE32] underline decoration-lime-200 underline-offset-8">Micro-Investment</span>
+              Five Interconnected Portals. One <span className="text-[#6BAE32] underline decoration-lime-200 underline-offset-8">Climate Mission</span>
             </h2>
           </div>
           <div className=" w-full md:w-1/4 lg:w-1/2 text-[#2D4A22]/70">
-            <p className="mb-6">At Greyn, we believe that real change begins with accessible opportunities. We've created a platform where every individual can become a catalyst for a cleaner, more resilient planet.</p>
-            {/* <p>Driven by a love for nature, Greyn offers quality seeds, rich soil, essential tools, and expert gardening services—all in one place.</p> */}
+            <p className="mb-6">Greyn operates through five interconnected portals — User Climate Action, NGO Transparency & Fundraising, Corporate ESG Reporting, Carbon Credit Marketplace, and Admin & Verification — creating a fully transparent climate infrastructure.</p>
           </div>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-4">
           <div className="flex flex-col gap-6">
             <div className="rounded-3xl bg-neutral-100 p-8 text-center">
-              <div className="text-4xl font-bold text-[#2D4A22]">10k+</div>
-              <div className="text-sm font-medium text-[#2D4A22]/60 uppercase mt-2">Global
-                Active Investors</div>
+              <div className="text-4xl font-bold text-[#2D4A22]">5</div>
+              <div className="text-sm font-medium text-[#2D4A22]/60 uppercase mt-2">Interconnected
+                Portals</div>
             </div>
             <div className="h-64 overflow-hidden rounded-3xl">
               <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1000&auto=format&fit=crop" className="h-full w-full object-cover" />
@@ -117,8 +116,8 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#2D4A22]/80 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between text-white">
                 <div>
-                  <div className="text-5xl font-bold">1M+</div>
-                  <div className="text-lg opacity-80">Trees Goals</div>
+                  <div className="text-5xl font-bold">MRV</div>
+                  <div className="text-lg opacity-80">Verified Impact</div>
                 </div>
                 <div className="rounded-2xl bg-[#6BAE32] p-4">
                   <ArrowRight size={24} className="-rotate-45" />
@@ -129,8 +128,8 @@ export default function App() {
 
           <div className="flex flex-col gap-6">
             <div className="rounded-3xl bg-neutral-100 p-8 text-center">
-              <div className="text-4xl font-bold text-[#2D4A22]">20+</div>
-              <div className="text-sm font-medium text-[#2D4A22]/60 uppercase mt-2">Service Providers</div>
+              <div className="text-4xl font-bold text-[#2D4A22]">Global</div>
+              <div className="text-sm font-medium text-[#2D4A22]/60 uppercase mt-2">NGO Partners</div>
             </div>
             <div className="h-64 overflow-hidden rounded-3xl">
               <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1000&auto=format&fit=crop" className="h-full w-full object-cover" />

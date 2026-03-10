@@ -79,7 +79,7 @@ const Footer: React.FC = React.memo(() => {
               />
             </div>
             <p className="mb-6 text-sm leading-relaxed text-gray-300">
-              Building a sustainable future through innovative green investments. Join us in making a positive impact on our planet.
+              The world's first unified climate-tech operating system connecting NGOs, corporations, users, and carbon markets for verified global climate impact.
             </p>
             {/* Social Media Icons */}
             <div className="flex gap-3">
@@ -138,7 +138,7 @@ const Footer: React.FC = React.memo(() => {
           <div>
             <h3 className="mb-6 text-lg font-semibold text-white">Stay Updated</h3>
             <p className="mb-4 text-sm text-gray-300">
-              Subscribe to our newsletter for the latest sustainability news.
+              Subscribe for climate-tech ecosystem updates.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <div className="relative">

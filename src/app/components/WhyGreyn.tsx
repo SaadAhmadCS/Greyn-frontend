@@ -55,26 +55,26 @@ const WhyGreynMatters = () => {
      const features = [
           {
                icon: ShieldCheck,
-               text: "Verified High-Impact Projects",
-               desc: "Rigorous vetting process ensuring every initiative meets global sustainability standards.",
+               text: "Verified MRV Systems",
+               desc: "Advanced Monitoring, Reporting, and Verification ensuring every climate project meets global standards.",
                color: "emerald"
           },
           {
                icon: Users,
-               text: "Community Driven Action",
-               desc: "Harnessing collective power to drive systemic change across local ecosystems.",
+               text: "Connected Ecosystem",
+               desc: "Five interconnected portals unifying NGOs, corporations, users, and carbon markets.",
                color: "green"
           },
           {
                icon: Globe,
-               text: "Circular Green Economy",
-               desc: "Supporting business models that prioritize regeneration and zero-waste lifecycles.",
+               text: "Transparent Carbon Markets",
+               desc: "Full traceability from climate project to carbon credit buyer. No greenwashing.",
                color: "teal"
           },
           {
                icon: TrendingUp,
-               text: "Measurable Growth",
-               desc: "Real-time dashboard tracking the direct environmental ROI of your contributions.",
+               text: "Measurable Impact",
+               desc: "Real-time dashboards tracking ESG performance, emissions reduction, and climate outcomes.",
                color: "lime"
           }
      ];
@@ -100,8 +100,8 @@ const WhyGreynMatters = () => {
                               </h3>
 
                               <p className="text-xl text-slate-600 leading-relaxed mb-12 max-w-2xl font-medium">
-                                   Greyn transforms environmental responsibility into a smart, impactful, and rewarding experience.
-                                   We democratize sustainability, making high-stakes green progress achievable for everyone.
+                                   Greyn creates a closed-loop climate impact engine built on trust and transparency.
+                                   Every action is verified through advanced MRV systems, making sustainability measurable at scale.
                               </p>
 
                               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -145,7 +145,7 @@ const WhyGreynMatters = () => {
                                                   <div className="flex justify-between items-end mb-4">
                                                        <div>
                                                             <p className="text-green-400 text-xs font-bold uppercase tracking-widest mb-1">Global Reach</p>
-                                                            <h5 className="text-slate-200 font-semibold">Green Projects</h5>
+                                                            <h5 className="text-slate-200 font-semibold">Climate Projects</h5>
                                                        </div>
                                                        <div className="text-right">
                                                             <div className="flex items-center text-4xl font-black text-white">
@@ -166,7 +166,7 @@ const WhyGreynMatters = () => {
                                                   <div className="flex justify-between items-end mb-4">
                                                        <div>
                                                             <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Network Power</p>
-                                                            <h5 className="text-slate-200 font-semibold">Active Investors</h5>
+                                                            <h5 className="text-slate-200 font-semibold">Ecosystem Partners</h5>
                                                        </div>
                                                        <div className="text-right">
                                                             <div className="flex items-center text-4xl font-black text-white">

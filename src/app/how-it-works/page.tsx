@@ -5,18 +5,19 @@ import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-type RoleTab = 'investor' | 'ngo' | 'corporate' | 'admin';
+type RoleTab = 'user' | 'ngo' | 'corporate' | 'carbon' | 'admin';
 
 const HowItWorksPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<RoleTab>('investor');
+  const [activeTab, setActiveTab] = useState<RoleTab>('user');
 
   // Check if user came from auth page with a role parameter
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const role = params.get('role');
-    if (role === 'simple-user' || role === 'investor') setActiveTab('investor');
+    if (role === 'simple-user' || role === 'investor') setActiveTab('user');
     else if (role === 'ngo') setActiveTab('ngo');
     else if (role === 'corporate') setActiveTab('corporate');
+    else if (role === 'carbon') setActiveTab('carbon');
     else if (role === 'admin') setActiveTab('admin');
   }, []);
 
@@ -28,10 +29,11 @@ const HowItWorksPage: React.FC = () => {
   };
 
   const tabs = [
-    { id: 'investor' as RoleTab, label: 'Investor', icon: '💰' },
+    { id: 'user' as RoleTab, label: 'User', icon: '👤' },
     { id: 'ngo' as RoleTab, label: 'NGO', icon: '🌱' },
-    { id: 'corporate' as RoleTab, label: 'Corporate', icon: '🏢' },
-    { id: 'admin' as RoleTab, label: 'Admin', icon: '🔐' }
+    { id: 'corporate' as RoleTab, label: 'Corporate ESG', icon: '🏢' },
+    { id: 'carbon' as RoleTab, label: 'Carbon Credit', icon: '🌍' },
+    { id: 'admin' as RoleTab, label: 'Admin & Verification', icon: '🛡' }
   ];
 
   return (
@@ -43,11 +45,11 @@ const HowItWorksPage: React.FC = () => {
           {/* Page Header */}
           <div className="mb-12 text-center">
             <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
-              How It Works
+              The Greyn Ecosystem
             </h1>
             <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Learn how Greyn Eco connects investors, NGOs, corporations, and administrators 
-              to create a sustainable future together.
+              Greyn operates through five interconnected portals — creating a fully transparent 
+              climate infrastructure for verified global impact.
             </p>
           </div>
 
@@ -74,33 +76,37 @@ const HowItWorksPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Investor Section */}
+          {/* User Section */}
           <section
-            id="section-investor"
+            id="section-user"
             className={`mb-16 rounded-2xl bg-white p-8 shadow-xl transition-all ${
-              activeTab === 'investor' ? 'border-2 border-green-500' : 'border border-gray-200'
+              activeTab === 'user' ? 'border-2 border-green-500' : 'border border-gray-200'
             }`}
           >
             <div className="mb-6 flex items-center gap-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-3xl">
-                💰
+                👤
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">For Investors</h2>
-                <p className="text-gray-600">Start investing in sustainable projects</p>
+                <h2 className="text-3xl font-bold text-gray-900">User Climate Action Portal</h2>
+                <p className="text-gray-600">Climate Action for Everyone</p>
               </div>
             </div>
 
             <div className="space-y-6">
+              <p className="text-lg text-gray-700">
+                Greyn empowers individuals to participate in verified climate initiatives through a
+                transparent digital platform. Greyn transforms everyday actions into measurable environmental progress.
+              </p>
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="rounded-xl bg-green-50 p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-2xl font-bold text-white">
                     1
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Browse Projects</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Support Eco-Projects</h3>
                   <p className="text-gray-600">
-                    Explore verified environmental projects from NGOs around the world. 
-                    Each project shows its impact, funding goal, and expected returns.
+                    Support certified eco-projects and contribute to verified environmental 
+                    initiatives around the world.
                   </p>
                 </div>
 
@@ -108,10 +114,10 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-2xl font-bold text-white">
                     2
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Invest & Track</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Earn CO₂ Credits</h3>
                   <p className="text-gray-600">
-                    Choose a project and invest any amount. Monitor your portfolio, 
-                    track returns, and see the real-world impact of your investments.
+                    Earn CO₂ credits by planting trees, recycling, or volunteering. 
+                    Join global sustainability challenges to maximize your impact.
                   </p>
                 </div>
 
@@ -119,28 +125,28 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-2xl font-bold text-white">
                     3
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Earn Returns</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Track & Redeem</h3>
                   <p className="text-gray-600">
-                    Receive financial returns and carbon credits. Use credits to purchase 
-                    eco-friendly products or retire them to offset your carbon footprint.
+                    Track personal impact through real-time dashboards and redeem 
+                    eco-rewards made from recycled materials.
                   </p>
                 </div>
               </div>
 
               <div className="rounded-xl bg-blue-50 p-6">
-                <h3 className="mb-3 text-xl font-bold text-gray-900">Additional Features</h3>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">User Portal Features</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-green-600">✓</span>
-                    <span><strong>Activity Tracking:</strong> Submit eco-friendly activities to earn additional credits</span>
+                    <span><strong>Eco-Projects:</strong> Support certified environmental initiatives worldwide</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-green-600">✓</span>
-                    <span><strong>Product Marketplace:</strong> Buy sustainable products using your carbon credits</span>
+                    <span><strong>Global Challenges:</strong> Join sustainability challenges and compete globally</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-green-600">✓</span>
-                    <span><strong>Portfolio Dashboard:</strong> View all your investments, returns, and impact in one place</span>
+                    <span><strong>Impact Dashboard:</strong> Track your personal environmental impact in real-time</span>
                   </li>
                 </ul>
               </div>
@@ -159,21 +165,25 @@ const HowItWorksPage: React.FC = () => {
                 🌱
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">For NGOs</h2>
-                <p className="text-gray-600">Launch and manage your environmental projects</p>
+                <h2 className="text-3xl font-bold text-gray-900">NGO Transparency & Fundraising Portal</h2>
+                <p className="text-gray-600">Transparency & Fundraising at Scale</p>
               </div>
             </div>
 
             <div className="space-y-6">
+              <p className="text-lg text-gray-700">
+                Greyn provides NGOs with a secure climate-tech infrastructure to manage projects and
+                demonstrate measurable impact. Greyn builds trust by ensuring every project is transparent and verifiable.
+              </p>
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="rounded-xl bg-emerald-50 p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-2xl font-bold text-white">
                     1
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Register & Verify</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Launch Campaigns</h3>
                   <p className="text-gray-600">
-                    Create your NGO account and complete your organization profile. 
-                    Our team verifies your credentials to ensure authenticity.
+                    Launch climate and sustainability campaigns. Receive donations 
+                    from corporates and individuals globally.
                   </p>
                 </div>
 
@@ -181,10 +191,10 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-2xl font-bold text-white">
                     2
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Launch Projects</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Upload Evidence</h3>
                   <p className="text-gray-600">
-                    Submit your environmental project for review. Include details about 
-                    impact, funding needs, timeline, and expected outcomes.
+                    Upload geo-tagged project evidence and apply for carbon credit 
+                    certification through the MRV verification system.
                   </p>
                 </div>
 
@@ -192,10 +202,10 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-2xl font-bold text-white">
                     3
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Receive Funding</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Track & Report</h3>
                   <p className="text-gray-600">
-                    Once approved, your project goes live. Investors can fund your project, 
-                    and you receive funds as milestones are achieved.
+                    Track impact through automated reporting dashboards. 
+                    Manage volunteers and climate events efficiently.
                   </p>
                 </div>
               </div>
@@ -205,22 +215,22 @@ const HowItWorksPage: React.FC = () => {
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-emerald-600">✓</span>
-                    <span><strong>Project Management:</strong> Track milestones, update progress, and manage team members</span>
+                    <span><strong>Carbon Certification:</strong> Apply for carbon credit certification with full transparency</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-emerald-600">✓</span>
-                    <span><strong>Wallet System:</strong> Receive funds, track transactions, and request withdrawals</span>
+                    <span><strong>Geo-Tagged Evidence:</strong> Upload verified project evidence with location data</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-emerald-600">✓</span>
-                    <span><strong>Analytics Dashboard:</strong> Monitor project performance, funding progress, and impact metrics</span>
+                    <span><strong>Automated Reporting:</strong> Track impact through real-time dashboards and analytics</span>
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* Corporate Section */}
+          {/* Corporate ESG Section */}
           <section
             id="section-corporate"
             className={`mb-16 rounded-2xl bg-white p-8 shadow-xl transition-all ${
@@ -232,21 +242,25 @@ const HowItWorksPage: React.FC = () => {
                 🏢
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">For Corporations</h2>
-                <p className="text-gray-600">Achieve your ESG goals and sustainability targets</p>
+                <h2 className="text-3xl font-bold text-gray-900">Corporate ESG Reporting Portal</h2>
+                <p className="text-gray-600">Measure. Report. Prove Your Impact.</p>
               </div>
             </div>
 
             <div className="space-y-6">
+              <p className="text-lg text-gray-700">
+                Greyn provides corporations with a powerful ESG reporting system integrated into a broader
+                climate ecosystem. Greyn replaces fragmented ESG tools with one unified platform.
+              </p>
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="rounded-xl bg-blue-50 p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white">
                     1
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Company Registration</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Measure Emissions</h3>
                   <p className="text-gray-600">
-                    Register your company and set up your corporate profile. 
-                    Define your sustainability goals and ESG targets.
+                    Measure Scope 1, 2, and 3 emissions. Track sustainability KPIs 
+                    across your entire organization.
                   </p>
                 </div>
 
@@ -254,10 +268,10 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-2xl font-bold text-white">
                     2
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Track & Offset</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Engage & Offset</h3>
                   <p className="text-gray-600">
-                    Monitor your carbon emissions, invest in offset projects, 
-                    and track your progress toward carbon neutrality.
+                    Manage corporate social campaigns, engage employees through green 
+                    challenges, and purchase verified carbon credits.
                   </p>
                 </div>
 
@@ -267,33 +281,110 @@ const HowItWorksPage: React.FC = () => {
                   </div>
                   <h3 className="mb-2 text-xl font-bold text-gray-900">Generate Reports</h3>
                   <p className="text-gray-600">
-                    Create comprehensive ESG reports showcasing your sustainability 
-                    initiatives and environmental impact to stakeholders.
+                    Generate audit-ready ESG compliance reports. Retire verified carbon 
+                    credits and prove your sustainability impact.
                   </p>
                 </div>
               </div>
 
               <div className="rounded-xl bg-blue-50 p-6">
-                <h3 className="mb-3 text-xl font-bold text-gray-900">Corporate Portal Features</h3>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">Corporate ESG Features</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-blue-600">✓</span>
-                    <span><strong>Emissions Tracking:</strong> Monitor and report your company's carbon footprint</span>
+                    <span><strong>Scope 1-3 Emissions:</strong> Comprehensive carbon footprint measurement and tracking</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-blue-600">✓</span>
-                    <span><strong>Campaign Management:</strong> Launch employee volunteer programs and sustainability campaigns</span>
+                    <span><strong>Green Challenges:</strong> Engage employees through sustainability challenges and campaigns</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-blue-600">✓</span>
-                    <span><strong>Compliance Reports:</strong> Generate detailed ESG reports for regulatory compliance</span>
+                    <span><strong>Audit-Ready Reports:</strong> Generate ESG compliance reports for regulatory and stakeholder review</span>
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* Admin Section */}
+          {/* Carbon Credit Section */}
+          <section
+            id="section-carbon"
+            className={`mb-16 rounded-2xl bg-white p-8 shadow-xl transition-all ${
+              activeTab === 'carbon' ? 'border-2 border-amber-500' : 'border border-gray-200'
+            }`}
+          >
+            <div className="mb-6 flex items-center gap-4">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-yellow-500 text-3xl">
+                🌍
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900">Carbon Credit Marketplace</h2>
+                <p className="text-gray-600">Verified Carbon Credits with Full Traceability</p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-lg text-gray-700">
+                Greyn connects climate projects with global carbon markets through a transparent digital
+                infrastructure. One credit equals one verified ton of CO₂ reduced. No greenwashing. Only measurable impact.
+              </p>
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="rounded-xl bg-amber-50 p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-600 text-2xl font-bold text-white">
+                    1
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Project Onboarding</h3>
+                  <p className="text-gray-600">
+                    NGO climate projects are onboarded and verified through MRV-based 
+                    validation including geo-tagging, audit logs, and satellite validation.
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-amber-50 p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-600 text-2xl font-bold text-white">
+                    2
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Credit Issuance</h3>
+                  <p className="text-gray-600">
+                    Digital carbon credits are issued upon verification. Each credit 
+                    represents one verified ton of CO₂ reduced or offset.
+                  </p>
+                </div>
+
+                <div className="rounded-xl bg-amber-50 p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-600 text-2xl font-bold text-white">
+                    3
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Purchase & Retire</h3>
+                  <p className="text-gray-600">
+                    Corporations purchase and retire verified carbon credits with 
+                    official offset certification and complete traceability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-xl bg-blue-50 p-6">
+                <h3 className="mb-3 text-xl font-bold text-gray-900">Carbon Marketplace Features</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-amber-600">✓</span>
+                    <span><strong>MRV Verification:</strong> Geo-tagging, audit logs, and satellite validation for every project</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-amber-600">✓</span>
+                    <span><strong>Full Traceability:</strong> Complete chain from project to buyer with transparent documentation</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1 text-amber-600">✓</span>
+                    <span><strong>Offset Certification:</strong> Official carbon offset certificates for regulatory compliance</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Admin & Verification Section */}
           <section
             id="section-admin"
             className={`mb-16 rounded-2xl bg-white p-8 shadow-xl transition-all ${
@@ -302,24 +393,28 @@ const HowItWorksPage: React.FC = () => {
           >
             <div className="mb-6 flex items-center gap-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-rose-500 text-3xl">
-                🔐
+                🛡
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">For Administrators</h2>
-                <p className="text-gray-600">Manage the platform and ensure quality</p>
+                <h2 className="text-3xl font-bold text-gray-900">Admin & Verification System</h2>
+                <p className="text-gray-600">Trust Is the Infrastructure</p>
               </div>
             </div>
 
             <div className="space-y-6">
+              <p className="text-lg text-gray-700">
+                Greyn&apos;s Admin & Verification system ensures ecosystem-wide transparency and integrity.
+                Greyn is not just a platform. It is a verification engine for global climate impact.
+              </p>
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="rounded-xl bg-red-50 p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-2xl font-bold text-white">
                     1
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Review & Approve</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Account Approval</h3>
                   <p className="text-gray-600">
-                    Review NGO registrations and project submissions. 
-                    Verify credentials and approve high-quality projects.
+                    NGO and corporate account approval with thorough credential 
+                    verification to ensure ecosystem authenticity.
                   </p>
                 </div>
 
@@ -327,10 +422,10 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-2xl font-bold text-white">
                     2
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Monitor Platform</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Project Validation</h3>
                   <p className="text-gray-600">
-                    Track all platform activities, transactions, and user interactions. 
-                    Ensure security and compliance across all portals.
+                    Climate project validation and fraud detection monitoring to 
+                    maintain the highest standards of integrity.
                   </p>
                 </div>
 
@@ -338,32 +433,28 @@ const HowItWorksPage: React.FC = () => {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-red-600 text-2xl font-bold text-white">
                     3
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-gray-900">Manage System</h3>
+                  <h3 className="mb-2 text-xl font-bold text-gray-900">Compliance Oversight</h3>
                   <p className="text-gray-600">
-                    Configure system settings, manage user roles, handle support requests, 
-                    and maintain platform health.
+                    Carbon credit compliance oversight and data integrity protection 
+                    across the entire ecosystem.
                   </p>
                 </div>
               </div>
 
               <div className="rounded-xl bg-blue-50 p-6">
-                <h3 className="mb-3 text-xl font-bold text-gray-900">Admin Portal Features</h3>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">Verification Features</h3>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-red-600">✓</span>
-                    <span><strong>Project Approval:</strong> Review and approve/reject NGO project submissions</span>
+                    <span><strong>Fraud Detection:</strong> Advanced monitoring systems to detect and prevent fraudulent activities</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-red-600">✓</span>
-                    <span><strong>User Management:</strong> Manage all users, roles, and access permissions</span>
+                    <span><strong>Compliance Management:</strong> Carbon credit compliance oversight and regulatory alignment</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="mt-1 text-red-600">✓</span>
-                    <span><strong>Financial Oversight:</strong> Monitor all transactions, withdrawals, and financial activities</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="mt-1 text-red-600">✓</span>
-                    <span><strong>Security & Audit:</strong> Track security events, audit logs, and system health</span>
+                    <span><strong>Data Integrity:</strong> Ecosystem-wide data protection and audit trail maintenance</span>
                   </li>
                 </ul>
               </div>
@@ -372,16 +463,24 @@ const HowItWorksPage: React.FC = () => {
 
           {/* Call to Action */}
           <div className="rounded-2xl bg-gradient-to-r from-green-600 to-emerald-600 p-8 text-center text-white shadow-xl">
-            <h2 className="mb-4 text-3xl font-bold">Ready to Get Started?</h2>
+            <h2 className="mb-4 text-3xl font-bold">Ready to Join the Ecosystem?</h2>
             <p className="mb-6 text-lg opacity-90">
-              Join thousands of users making a positive environmental impact
+              Be part of the verified climate action infrastructure powering global impact
             </p>
-            <Link
-              href="/auth"
-              className="inline-block rounded-lg bg-white px-8 py-3 font-semibold text-green-600 transition-all hover:scale-105 hover:shadow-lg"
-            >
-              Sign Up Now
-            </Link>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/auth"
+                className="inline-block rounded-lg bg-white px-8 py-3 font-semibold text-green-600 transition-all hover:scale-105 hover:shadow-lg"
+              >
+                Explore the Ecosystem
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg border-2 border-white px-8 py-3 font-semibold text-white transition-all hover:bg-white hover:text-green-600"
+              >
+                Partner With Greyn
+              </Link>
+            </div>
           </div>
         </div>
       </main>

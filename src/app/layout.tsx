@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "GREYN – Sustainable Micro-Investment Platform",
-  description: "Leading the way in sustainable and eco-friendly solutions",
+  title: "Greyn | Unified Climate-Tech Operating System for ESG & Carbon Markets",
+  description: "Greyn is the world's first unified climate-tech operating system connecting NGOs, corporations, users, and carbon markets to deliver verified, transparent, and measurable global climate impact.",
   icons: {
     icon: "/favicon.svg",
   },

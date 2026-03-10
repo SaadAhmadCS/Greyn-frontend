@@ -259,9 +259,9 @@ const App = () => {
         <section className="min-h-[70vh] flex flex-col items-center justify-center text-center mb-24">
           <FadeIn>
             <h1 className="text-6xl md:text-9xl font-serif font-medium tracking-tight mb-8">
-              The Future is <br />
+              Verified Global <br />
               <span className="relative">
-                <span className="relative z-10 text-emerald-600 italic">Sustainable.</span>
+                <span className="relative z-10 text-emerald-600 italic">Impact.</span>
                 <svg className="absolute -bottom-2 left-0 w-full text-emerald-200 dark:text-emerald-900/50 -z-0" viewBox="0 0 338 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 9C118.5 2.5 220 2.5 335 9" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
                 </svg>
@@ -270,7 +270,7 @@ const App = () => {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-2xl text-slate-500 dark:text-slate-400 max-w-3xl leading-relaxed mb-12">
-              Greyn Eco is a revolutionary platform bridging the gap between environmental action and financial opportunity. We believe that impact and growth are inseparable.
+              Greyn connects NGOs, Corporations, Communities, and Carbon Markets into one integrated ecosystem — enabling transparent, measurable, and scalable climate action worldwide.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -285,7 +285,7 @@ const App = () => {
                   10k+
                 </div>
               </div>
-              <p className="text-xs text-slate-400 font-medium flex items-center ml-2">Trusted by 10,000+ global eco-investors</p>
+              <p className="text-xs text-slate-400 font-medium flex items-center ml-2">Trusted by global climate partners</p>
             </div>
           </FadeIn>
         </section>
@@ -313,8 +313,8 @@ const App = () => {
               <FadeIn>
                 <SectionHeader
                   badge="Our Mission"
-                  title="Democratizing the Green Revolution."
-                  text="We are building the infrastructure for a planet-positive economy. Our goal is to empower every individual and corporation to play an active role in environmental restoration."
+                  title="Powering Verified Climate Action."
+                  text="To build the digital infrastructure that powers verified climate action globally. From NGO project execution to corporate ESG reporting and carbon credit issuance — every action is verified through advanced MRV systems."
                 />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div className="flex gap-4">
@@ -322,8 +322,8 @@ const App = () => {
                       <Target size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold mb-1">Scale Impact</h4>
-                      <p className="text-sm text-slate-500 leading-relaxed">Helping NGOs launch and manage projects with a global funding pool.</p>
+                      <h4 className="font-bold mb-1">Unified Ecosystem</h4>
+                      <p className="text-sm text-slate-500 leading-relaxed">Five interconnected portals creating a fully transparent climate infrastructure.</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -331,8 +331,8 @@ const App = () => {
                       <Zap size={20} />
                     </div>
                     <div>
-                      <h4 className="font-bold mb-1">Empower ESG</h4>
-                      <p className="text-sm text-slate-500 leading-relaxed">Enabling corporations to meet sustainability goals through verified data.</p>
+                      <h4 className="font-bold mb-1">Verified MRV</h4>
+                      <p className="text-sm text-slate-500 leading-relaxed">Advanced Monitoring, Reporting, and Verification systems ensuring trust and transparency.</p>
                     </div>
                   </div>
                 </div>
@@ -388,15 +388,17 @@ const App = () => {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20">
             <div>
               <SectionHeader
-                badge="The Network"
-                title="A Unified Ecosystem."
-                text="Three distinct pathways, one common goal: a thriving planet. We provide specialized tools for every stakeholder."
+                badge="The Ecosystem"
+                title="Five Portals. One Mission."
+                text="Greyn operates through five interconnected portals, each connecting seamlessly to create a fully transparent climate infrastructure."
               />
               <div className="space-y-6">
                 {[
-                  { icon: TrendingUp, label: "Investors", text: "Verified projects with potential returns.", col: "text-emerald-400" },
-                  { icon: Globe, label: "NGOs", text: "Scale impact with global community funding.", col: "text-blue-400" },
-                  { icon: BarChart3, label: "Corporations", text: "Comprehensive ESG reporting and offsets.", col: "text-teal-400" }
+                  { icon: TrendingUp, label: "User Climate Action", text: "Earn CO₂ credits, join challenges, track impact.", col: "text-emerald-400" },
+                  { icon: Globe, label: "NGO Transparency", text: "Launch campaigns, upload evidence, get certified.", col: "text-blue-400" },
+                  { icon: BarChart3, label: "Corporate ESG", text: "Scope 1-3 emissions, KPIs, audit-ready reports.", col: "text-teal-400" },
+                  { icon: ShieldCheck, label: "Carbon Marketplace", text: "Verified credits with full MRV traceability.", col: "text-amber-400" },
+                  { icon: Lightbulb, label: "Admin & Verification", text: "Project validation, fraud detection, compliance.", col: "text-rose-400" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-5 p-4 rounded-2xl hover:bg-white/5 transition-colors cursor-default">
                     <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center ${item.col}`}>
@@ -454,29 +456,29 @@ const App = () => {
 
           <FadeIn>
             <h2 className="text-4xl md:text-7xl font-serif text-white mb-8 max-w-4xl mx-auto leading-tight">
-              Ready to invest in the <br />
-              <span className="italic">planet's future?</span>
+              Ready to join the <br />
+              <span className="italic">climate ecosystem?</span>
             </h2>
             <p className="text-emerald-50 text-lg md:text-xl max-w-xl mx-auto mb-12 opacity-90">
-              Start your journey today. Whether you're an individual or a corporation, there's a place for you in the Greyn Eco system.
+              Whether you're an NGO, corporation, or individual — there's a place for you in the Greyn ecosystem.
             </p>
             <div className="text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-200">Join Us Today</h2>
+              <h2 className="mb-4 text-3xl font-bold text-gray-200">Partner With Greyn</h2>
               <p className="mb-6 text-lg text-green-200">
-                Be part of the solution. Start your journey with Greyn Eco.
+                Be part of the verified climate action infrastructure.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/how-it-works"
                   className="rounded-lg border-2 border-green-100 px-8 py-3 font-semibold text-green-100 transition-all hover:bg-green-100 hover:text-white"
                 >
-                  Learn How It Works
+                  Explore the Ecosystem
                 </Link>
                 <Link
                   href="/auth"
                   className="rounded-lg bg-gradient-to-r from-green-100 to-emerald-100 px-8 py-3 font-semibold text-white transition-all hover:shadow-lg"
                 >
-                  Get Started
+                  Partner With Greyn
                 </Link>
               </div>
             </div>
